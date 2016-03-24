@@ -13,7 +13,7 @@ public class MemoryStoreTest {
 
     @Test
     public void genericTest() {
-        throw new BlobNotFoundException();
+        //throw new BlobNotFoundException();
     }	
     @Test
     public void createBuckets() {

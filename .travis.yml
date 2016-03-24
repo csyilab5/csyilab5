@@ -11,6 +11,7 @@ deploy:
   on: &2
     repo: casofiei/csyilab5
   bucket: lab6-code-deploy
+  region: eu-west-1
 - provider: codedeploy
   access_key_id: AKIAI3PKVBOESOL3DUGA
   secret_access_key: *1
@@ -20,6 +21,7 @@ deploy:
   application: csyilab5
   deployment_group: DemoFleet
   on: *2
+  region: eu-west-1
 before_deploy:
 - mkdir -p dpl_cd_upload
 - cp -r codedeploy target

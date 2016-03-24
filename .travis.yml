@@ -18,7 +18,7 @@ deploy:
   bucket: lab6-code-deploy
   key: csyi-lab-5.tgz
   bundle_type: tgz
-  application: csyilab5
+  application: csyi-lab-5
   deployment_group: DemoFleet
   on: *2
   region: eu-west-1

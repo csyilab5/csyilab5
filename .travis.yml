@@ -18,7 +18,7 @@ deploy:
   secret_access_key: *1
   key: csyi-lab-5.tgz
   bundle_type: tgz
-  application: csyilab5
+  application: csyi-lab-6
   deployment_group: DemoFleet
   on: *2
   region: eu-west-1

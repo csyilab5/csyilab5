@@ -13,6 +13,7 @@ public class MemoryStoreTest {
 
     @Test
     public void createBuckets() {
+	throw new BlobNotFoundException();
         DataStore store = new MemoryStore();
 
         Bucket bucket1 = new Bucket(BUCKET_NAME);

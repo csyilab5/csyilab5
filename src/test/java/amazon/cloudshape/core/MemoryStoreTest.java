@@ -9,11 +9,10 @@ import static org.junit.Assert.assertNotNull;
 
 public class MemoryStoreTest {
 
-    private static final String BUCKET_NAME = "iphone";	
+    private static final String BUCKET_NAME = "iphone";
 
     @Test
     public void createBuckets() {
-	throw new Exception();
         DataStore store = new MemoryStore();
 
         Bucket bucket1 = new Bucket(BUCKET_NAME);
@@ -38,7 +37,7 @@ public class MemoryStoreTest {
 
         store.deleteBucket(BUCKET_NAME);
         store.loadBucket(BUCKET_NAME);
-    }		
+    }
 
     @Test
     public void createBlobs() {
@@ -55,7 +54,6 @@ public class MemoryStoreTest {
 
         assertNotNull(blobs);
         assertEquals(blob1, blobs.get(0));
-   
     }
 
     @Test(expected = BlobNotFoundException.class)

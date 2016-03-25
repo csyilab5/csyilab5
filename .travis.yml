@@ -5,7 +5,7 @@ deploy:
 - provider: s3
   access_key_id: AKIAIV4RZ3KXUCDT54DA
   secret_access_key: &1
-    secure: dV6p+ZHhu/sJXjBEm87HBlhMMWe/985J4ncykmKI7n/qo5jK657MbcxdBo6ObAoJ11u7m7HdHlBefOVL1ujtP3DXlNS9VnHp9gHr1VeB5Eupoeiz1P7Dj0DS/LLvQyWTjPpSAn+crLjv/aB2eIHJbktkZ3+3mzuYcpjhEy/AsUN1JzUsmVSWvmEsf3N3mUcTW5SVEAuSz8AYT/8Yt0mL3nZP7WVe45+qhAkZ9JxO9w4hWz89b0Qqcql/RGH0mw9pgkEM2i5G2DHLj4E2nq+fnZVH5+nQnP3Cl9ihveHtvEWw4c2um7uWVdDGiuJdU88dxcefwS6Ywv1+5QBb19hN68EWm+PDW9NKLStdVUh4qao/CvRdDePyPIZhXug2u+OVLej0H4GFhfkY55vycOXut+6qf/CfmGFGIzX8LjAvClligyBlKRXOJK94cYXRro24ydDU9yU1VyrYI0EuxV6ltkXCJD/QpifEVUzQhUPE2MCKLCGhqezmctCab4TTX2Y3eGsssbiQLVevBw3ngTBtRjVqQp58Qjrjve6JTkIU1hgfCBybiEos00zA3LL1CihqOPqlMDxZQiVmZj1SqUnw8f2jzt/F8/C9T3tkr37KfLMnms7RwRURD+3QceIYiY6xwz8ZR731XE7F1jF3QIlpM8P7BZDjIvUdfNCSZCzMxcI=
+    secure: WVCjR1uH1q5hGo9inQVT6VZiGPDRtzagJZs8EpP7AZi8i5RC4EvxCzTslLAZDWQJPZO1FAJXtqtqF3op7BkA7iuKsc8rf5uy1maZW7mlRTPGX+PbMTYeGGyWXcIrErYZbgXQBBr/JdAv2GmMO0MGhSFL7F7YwdkTn2EP7nsVttjU+OZLRWsLa8IudmhN7bom3yjwCeB2DDDPEO1Qb/HeaKio+MtRAPbKgXJ5gxhwSsEFfYaOUohwajeXBK9QALi2BnUM00PnjT0J35x+AFuRYZ99uTqepwzar0FX0rFYk1hrzCis96SzgW8bVRnGrILm0YqpkoE9wza5fvEmvciVOHs2+yZfQ5Wm5ksHqUdOELPYb4CWbiw+s3IjdpxDMEh09lrMHgA0lt5JU6EwcNYNrqND9efycF08tu798TECge/IUFSJUU9Vi+bEUhFqurb9xzH0SkL5eCWtNa+lEA/V5AaXOCS9VQ4qWdRDi+jZajSUtzj3roW+4DJn/EEcZkoUjxvBTRqLJ9ShxbK+F2SfCks2oGU/ZwEUGi3WoFccF3M5Kd+ITMl4wVofCxGyGC8FgD8HSlcwN+OEokOhTTsBVQysyqC1LkI6F1iFCyeg4B6dTAyUQXODxJgt44PM8GApkpIyt2UWJ/ZKWEiFg3Fj/zq0ixMA+IjF8xaHYu/lR2g=
   local_dir: dpl_cd_upload
   skip_cleanup: true
   on: &2
@@ -15,11 +15,11 @@ deploy:
   access_key_id: AKIAIV4RZ3KXUCDT54DA
   secret_access_key: *1
   bucket: lab06-bucket
-  key: lab06-bucket
-  bundle_type: ''
+  key: csyi-lab-5.tgz
+  bundle_type: tgz
   application: csyilab5
-  deployment_group: ''
+  deployment_group: DemoFleet
   on: *2
 before_deploy:
 - mkdir -p dpl_cd_upload
-- mv lab06-bucket dpl_cd_upload/lab06-bucket
+- mv csyi-lab-5.tgz dpl_cd_upload/csyi-lab-5.tgz

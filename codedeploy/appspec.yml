@@ -1,5 +1,6 @@
-version: 0.1
+version: 0.0
 os: linux
+hooks:
     BeforeInstall:
         - location: scripts/before-install.sh
 	  timeout: 300

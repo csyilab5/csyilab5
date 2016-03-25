@@ -1,4 +1,25 @@
 language: java
 jdk:
-  - oraclejdk7
-
+- oraclejdk7
+deploy:
+- provider: s3
+  access_key_id: AKIAI65QPUYX57ME3NFA
+  secret_access_key: &1
+    secure: X/iNtWJyJgk2WSdApv0gq5jon2sB1/T1MJ8/NXUyhDgE3UZJUuyuf/5k9FRcYxSOYL2lGVOdrwdxSPv71IKesNv0JHECDCbjlTDvicvRiOA2T4aCXJqyCqM1WGOkv9YBZ8ElFC+LfFi2+3V4ULv3hhazcIbzTebaVZDshewi7HD5SaPQ/SXcE6DdWBvYEVnpbNqb8/+kRODP4q0+QoSYWSkvmDXm1+NiBCY+iNwUDOi+T3+ikCRY29WZMHbwtKVXgX9PSaAIyqKxsgTa8F/vpz5lg6/qisClBCXMCqwnZ2qti3Jb6mdM2H7saDhhRizPT7VR8HULPRWSKkVFjfvvBdmka0dGJtPA4wmMj+wngEHLgvfdEaX3aW7DdJF0gkz9q2Mcu8fG1Ek/qb15AJ1YAeUJf1GpyHAlT9gzzqZLaqjddm43NURIx2HIqfypHMEqTaauZ8HlfUppBoE2s2/dBj2P/Q9tQbpaCcQfryoeJoCLYdUz1rs1ONwAZd1mOv1DtwxglAXhZ5h3q5imG4ZV7ZPbbXZcZsx/o5EVq0Y1SwyirWCEVFk8yRAAGZuPu3qd63AU4BKE+MotEXIzcPEjYxY+kvQNB1FXmJ/rT9fPu2HSrK5InJzQR9vW0COgBPSZ1zH7nQBGvCjTO8+aXrL+JStYqpw3w/BHV775DGcuVb4=
+  local_dir: dpl_cd_upload
+  skip_cleanup: true
+  on: &2
+    repo: VirlanValentin/csyilab5
+  bucket: bucketlab6
+- provider: codedeploy
+  access_key_id: AKIAI65QPUYX57ME3NFA
+  secret_access_key: *1
+  bucket: bucketlab6
+  key: ': csyi-lab-5.tgz'
+  bundle_type: tgz
+  application: applab6
+  deployment_group: DemoFleet
+  on: *2
+before_deploy:
+- mkdir -p dpl_cd_upload
+- mv :\ csyi-lab-5.tgz dpl_cd_upload/:\ csyi-lab-5.tgz

@@ -8,8 +8,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 public class TestRaluca {
+
     @Test
-    public void Test() {
+    public void testRaluca() {
         throw new BlobNotFoundException();
     }
 }

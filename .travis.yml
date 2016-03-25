@@ -10,15 +10,19 @@ deploy:
   on: &2
     repo: iuliant88/csyilab5
   bucket: com.tirzuman.cloudshape.l5.clouddeploybucket
+  region: eu-west-1
 - provider: codedeploy
+  bucket: com.tirzuman.cloudshape.l5.clouddeploybucket
   access_key_id: AKIAI2R5AWJZPUEIXJ7Q
   secret_access_key: *1
-  bucket: com.tirzuman.cloudshape.l5.clouddeploybucket
   key: csyi-lab-5.tgz
   bundle_type: tgz
   application: csyilab5
   deployment_group: DemoFleet
   on: *2
+  region: eu-west-1
 before_deploy:
 - mkdir -p dpl_cd_upload
-- mv csyi-lab-5.tgz dpl_cd_upload/csyi-lab-5.tgz
+- cp -r codedeploy target
+- cp target/cloudshape-1.0.0.jar target/codedeploy
+- tar -czvf dpl_cd_upload/csyi-lab-5.tgz -C target/codedeploy .

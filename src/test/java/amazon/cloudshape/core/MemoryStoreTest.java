@@ -12,11 +12,6 @@ public class MemoryStoreTest {
     private static final String BUCKET_NAME = "iphone";
 
     @Test
-public void test(){
-	throw new BlobNotFoundException();
-}	
-    
-    @Test
     public void createBuckets() {
         DataStore store = new MemoryStore();
 

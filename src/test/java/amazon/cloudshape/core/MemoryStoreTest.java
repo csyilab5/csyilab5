@@ -70,8 +70,5 @@ public class MemoryStoreTest {
         store.loadBlob(BUCKET_NAME, key);
     }
 
-    @Test
-    public void alwaysFail(){
-	throw new BlobNotFoundException();
-    }
+   
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="amazon.cloudshape.core.MemoryStoreTest" time="0.019" tests="5" errors="1" skipped="0" failures="0">
+<testsuite name="amazon.cloudshape.core.MemoryStoreTest" time="0.001" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/java/jdk1.8.0_74/jre/lib/amd64"/>
@@ -38,11 +38,10 @@
     <property name="java.specification.version" value="1.8"/>
     <property name="user.name" value="ec2-user"/>
     <property name="java.class.path" value="/home/ec2-user/bin/apache-maven-3.3.9/boot/plexus-classworlds-2.5.2.jar"/>
-    <property name="org.slf4j.simpleLogger.defaultLogLevel" value="debug"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/usr/java/jdk1.8.0_74/jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher package -e -X"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher package"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -60,12 +59,7 @@
     <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase name="createBuckets" classname="amazon.cloudshape.core.MemoryStoreTest" time="0.001"/>
-  <testcase name="deleteBlobs" classname="amazon.cloudshape.core.MemoryStoreTest" time="0.004"/>
+  <testcase name="deleteBlobs" classname="amazon.cloudshape.core.MemoryStoreTest" time="0"/>
   <testcase name="createBlobs" classname="amazon.cloudshape.core.MemoryStoreTest" time="0"/>
-  <testcase name="deleteBuckets" classname="amazon.cloudshape.core.MemoryStoreTest" time="0.001"/>
-  <testcase name="alwaysFail" classname="amazon.cloudshape.core.MemoryStoreTest" time="0.013">
-    <error type="amazon.cloudshape.core.BlobNotFoundException:">amazon.cloudshape.core.BlobNotFoundException: null
-	at amazon.cloudshape.core.MemoryStoreTest.alwaysFail(MemoryStoreTest.java:75)
-</error>
-  </testcase>
+  <testcase name="deleteBuckets" classname="amazon.cloudshape.core.MemoryStoreTest" time="0"/>
 </testsuite>

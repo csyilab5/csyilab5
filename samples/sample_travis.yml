@@ -3,29 +3,23 @@ jdk:
 - oraclejdk7
 deploy:
 - provider: s3
-  access_key_id: <REPLACE>AKIAJEKQIFMT56GAWG4Q
+  access_key_id: AKIAIV4RZ3KXUCDT54DA
   secret_access_key: &1
-    secure: <REPLACE>DMYiNTlfvmDU6X51AEcNLUvokXaHIIRfKZOxsHouoUUuZ7WlPF5ks7AFWiPp5Gh+aX/dLhBXnavPTnoDHqFGwWidpsekIv5fdlP3XegOoUZnESlg6iV4m9ZUvIEVcFYcaaZKi+DtewaDhOR6jqPvV5TJT0imTbcmIBifLYuJ/SdIXxcgg8K/XJ1PENFsKdx1JR/TK2aBb5JBOe5MSxGyIEdjqM90MEYZgCke8Nhv6mWoubbPA8f7Az28GycqxGqAKOM3pShfsX/tdhEZugsCjDGXRqeKorg8HF3lmqr1PdW6sxuBzlwPH12NSJURgvGRhPuCGJzhPQS6seet/XCm0vMYDXHPZ8dnW+EBi0mmVYoZf0enL2/XDhF82tYcgqkM96+yevnXX+PpY7dyI5yNe4SUkBHuG4L9npyYHgWjL9dK/kiqF/3yEAAzPE7baInEkJ+aZfTMgfEz8rImFK0SL9lapf9FKfgeU/aNBxXJgx/hDfefBoWufCjDVp4sJBDGYb86VNNc90FLOkdTA1rIOrwELcDKaiXq1/mJppo4oyr2TWjT+imBgh5DBsOjCSTTgDQvz6Ys0/92FM333eKgROHw4fa0TyqsnS08FL+NuFiW/F+GB6yv8RvoYylyLtGdq/5Vem7p3kx6lPlEJaFiRqrFZ+LlVEFzPCp+Wf1bfNM=
+    secure: dV6p+ZHhu/sJXjBEm87HBlhMMWe/985J4ncykmKI7n/qo5jK657MbcxdBo6ObAoJ11u7m7HdHlBefOVL1ujtP3DXlNS9VnHp9gHr1VeB5Eupoeiz1P7Dj0DS/LLvQyWTjPpSAn+crLjv/aB2eIHJbktkZ3+3mzuYcpjhEy/AsUN1JzUsmVSWvmEsf3N3mUcTW5SVEAuSz8AYT/8Yt0mL3nZP7WVe45+qhAkZ9JxO9w4hWz89b0Qqcql/RGH0mw9pgkEM2i5G2DHLj4E2nq+fnZVH5+nQnP3Cl9ihveHtvEWw4c2um7uWVdDGiuJdU88dxcefwS6Ywv1+5QBb19hN68EWm+PDW9NKLStdVUh4qao/CvRdDePyPIZhXug2u+OVLej0H4GFhfkY55vycOXut+6qf/CfmGFGIzX8LjAvClligyBlKRXOJK94cYXRro24ydDU9yU1VyrYI0EuxV6ltkXCJD/QpifEVUzQhUPE2MCKLCGhqezmctCab4TTX2Y3eGsssbiQLVevBw3ngTBtRjVqQp58Qjrjve6JTkIU1hgfCBybiEos00zA3LL1CihqOPqlMDxZQiVmZj1SqUnw8f2jzt/F8/C9T3tkr37KfLMnms7RwRURD+3QceIYiY6xwz8ZR731XE7F1jF3QIlpM8P7BZDjIvUdfNCSZCzMxcI=
   local_dir: dpl_cd_upload
   skip_cleanup: true
   on: &2
-    repo: <REPLACE>balcanu/csyilab5
-  bucket: <REPLACE>balcanu-csyilab5-code-deploy
-  region: eu-west-1
+    repo: bogdan-constandache/csyilab5
+  bucket: lab06-bucket
 - provider: codedeploy
-  bucket: <REPLACE>balcanu-csyilab5-code-deploy
-  access_key_id: <REPLACE>AKIAJEKQIFMT56GAWG4Q
+  access_key_id: AKIAIV4RZ3KXUCDT54DA
   secret_access_key: *1
-  key: csyi-lab-5.tgz
-  bundle_type: tgz
+  bucket: lab06-bucket
+  key: lab06-bucket
+  bundle_type: ''
   application: csyilab5
-  deployment_group: DemoFleet
+  deployment_group: ''
   on: *2
-  region: eu-west-1
 before_deploy:
 - mkdir -p dpl_cd_upload
-- cp -r codedeploy target
-- cp target/cloudshape-1.0.0.jar target/codedeploy
-- tar -czvf dpl_cd_upload/csyi-lab-5.tgz -C target/codedeploy .
-
-
+- mv lab06-bucket dpl_cd_upload/lab06-bucket

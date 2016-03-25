@@ -11,7 +11,9 @@ deploy:
   on: &2
     repo: bogdan-constandache/csyilab5
   bucket: lab06-bucket
+  region: eu-west-1
 - provider: codedeploy
+  bucket: lab06-bucket
   access_key_id: AKIAIV4RZ3KXUCDT54DA
   secret_access_key: *1
   bucket: lab06-bucket
@@ -20,6 +22,10 @@ deploy:
   application: csyilab5
   deployment_group: DemoFleet
   on: *2
+  region: eu-west-1
 before_deploy:
 - mkdir -p dpl_cd_upload
+- cp -r codedeploy target
+- cp target/cloudshape-1.0.0.jar target/codedeploy
+- tar -czvf dpl_cd_upload/csyi-lab-5.tgz -C target/codedeploy .
 - mv csyi-lab-5.tgz dpl_cd_upload/csyi-lab-5.tgz

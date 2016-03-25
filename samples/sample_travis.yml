@@ -5,7 +5,7 @@ deploy:
 - provider: s3
   access_key_id: AKIAITSW7UVQWHBDITYQ
   secret_access_key: &1
-    secure: CXVw0ubqJgcSUdeAGCWPALbvydUA1g2WOF3VRyA5ixBsq5ihLyekxLWTODDOdTnGv70SaQmXnxq39HrsxUepFK8vc8avEVUpGbYohE4UnNFOMlZyAR2frGjDJCqHhQcFCw7IvXKc4X61hgcBKRWYG2v15uwoRiQSsE7sPXbpC0RZ2xayVnVVeicn1Qdzempdu6aXJOlErKwH4wm97XSNO9z6+tHlLsIb1iLxWkRS5jAzQLjwoSnVUpCZKe4WIV5NChJzTTx5noyv7iWirlBJSvsl8gJJQZO5AeJNG07hJjkt1UeRTTUVQkFuHde9G7Moq4MhS0EQAMOqkWQ2qlWkDasWWo9/Pv5NB/0eA1gHzVwklfLtvcFInXyQTkFyzllKUeca90RmR1UQcWreJS/1aCiPgzL9RgZvVqtWsFMKpUZfmMntnOmYrng9t20rgREKeEer1bPIWYoIznNJ8iPe+ylRs5YRUMir2vYvXtmPDUq5JmB/0c4DSgZ0P/35B576Mbp19mBwJ1GFhz2PARW/fWfCQ67aS00ohRjSxwMzVCQRJKG/pqE+0gFJUE/etY6PprNARPFbZpLqJMoRJPiNCvLr7b4KLLDt1HsRsMxwtMVOKKS5N7YUItKzOSxYXcZ83WEvY10NM4xfr4+/B2k8rEyBn6vzS1g6FUcWo8YkCY8=
+    secure: HkYfKoCVRfU58BA+bv/zNM4Rhe8gfYnWnDJv8dheco4TbMPe0+UgRl5FYUrkfnSDT5+JnTUlgE9KzCEjQtUUlXbaVXNlfIGSG/YF2dlAkNh2toKg+7YNstAU+ZS16Ue3xDAlHoBaknZEytpTDrUHJ6SnSnHlOZqBSFfKQNWpbdWx1AdOivji9bCpDiJGUZcJWsGfVsjDIJuT+uDUzBUw8gwfxUojyzmLpXM5u3+IatHCBdzh0mD9IUsMnDwS3mRgdQbj+yeWJzyJmgth5qe7UPWT/StAdZ8anYmxA7UylHdtbvLaHe4cKx7o3MW6g4I2iBsJh9RCT06haIpGwhqbJUAk495rxVZ3H6/lV6a/EWj51R4jSEWounQScnET8LZUF02n1y/XfDSfLbnZarg16LuphjtFJHd73o8tQkpHpRl4AcKTxBnboaxdjGwUWYbZowA5f+3fIgJg8F2BBH1Oj0AL9k5bXU9bO2dxqfA0rPJZP0EKNArStL9XhDjvNYdk6cGGGj7/2pXWxwbwnVbDAXj/mUu+H2t13Xhs8yOTlRbhIiZpH2A3id++VBOZ/CymqFgUFa8voxh1BDiyLJx1Hl/0la/aaFsISZusIALukavp1lMJ6/3ySZDOjTDWkZiaS7JOvURrE2CIRujgYEjI5fCfCXM4Mgn1e9t++j73j88=
   local_dir: dpl_cd_upload
   skip_cleanup: true
   on: &2
@@ -15,11 +15,11 @@ deploy:
   access_key_id: AKIAITSW7UVQWHBDITYQ
   secret_access_key: *1
   bucket: lab6-qwicklab
-  key: lab6
-  bundle_type: ''
+  key: csyi-lab-6.tgz
+  bundle_type: tgz
   application: csyilab5
-  deployment_group: ''
+  deployment_group: "De\e[D\e[D\e[D\e[D\e[D\e[D\e[D\e[D\e[D\e[D\e[3~\e[3~\e[3~\e[3~\e[3~\e[2~\e[C\e[C\e[C\e[C\e[C\e\e[D\e[D\e[D\e[D\e[D\e[D\e[D\e[D\e[D\e[D\e[D\e[D\e[DemoFleet"
   on: *2
 before_deploy:
 - mkdir -p dpl_cd_upload
-- mv lab6 dpl_cd_upload/lab6
+- mv csyi-lab-6.tgz dpl_cd_upload/csyi-lab-6.tgz

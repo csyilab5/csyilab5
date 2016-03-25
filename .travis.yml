@@ -18,8 +18,11 @@ deploy:
   key: csyi-lab-6.tgz
   bundle_type: tgz
   application: csyilab5
-  deployment_group: "De\e[D\e[D\e[D\e[D\e[D\e[D\e[D\e[D\e[D\e[D\e[3~\e[3~\e[3~\e[3~\e[3~\e[2~\e[C\e[C\e[C\e[C\e[C\e\e[D\e[D\e[D\e[D\e[D\e[D\e[D\e[D\e[D\e[D\e[D\e[D\e[DemoFleet"
+  deployment_group: DemoFleet
   on: *2
+  region: eu-west-1
 before_deploy:
 - mkdir -p dpl_cd_upload
-- mv csyi-lab-6.tgz dpl_cd_upload/csyi-lab-6.tgz
+- cp -r codedeploy target
+- cp target/cloudshape-1.0.0.jar target/codedeploy
+- tar -czvf dpl_cd_upload/csyi-lab-6.tgz -C target/codedeploy .

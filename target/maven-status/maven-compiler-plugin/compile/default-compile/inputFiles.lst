@@ -1,8 +1,0 @@
-/home/ec2-user/csyilab5/src/main/java/amazon/cloudshape/core/Bucket.java
-/home/ec2-user/csyilab5/src/main/java/amazon/cloudshape/core/BlobNotFoundException.java
-/home/ec2-user/csyilab5/src/main/java/amazon/cloudshape/rest/ServiceController.java
-/home/ec2-user/csyilab5/src/main/java/amazon/cloudshape/core/Blob.java
-/home/ec2-user/csyilab5/src/main/java/amazon/cloudshape/core/BucketNotFoundException.java
-/home/ec2-user/csyilab5/src/main/java/amazon/cloudshape/core/MemoryStore.java
-/home/ec2-user/csyilab5/src/main/java/amazon/cloudshape/rest/Application.java
-/home/ec2-user/csyilab5/src/main/java/amazon/cloudshape/core/DataStore.java

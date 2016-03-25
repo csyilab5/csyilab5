@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: amazon.cloudshape.core.MemoryStoreTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.032 sec <<< FAILURE! - in amazon.cloudshape.core.MemoryStoreTest
+alwaysFail(amazon.cloudshape.core.MemoryStoreTest)  Time elapsed: 0.013 sec  <<< ERROR!
+amazon.cloudshape.core.BlobNotFoundException: null
+	at amazon.cloudshape.core.MemoryStoreTest.alwaysFail(MemoryStoreTest.java:75)
+

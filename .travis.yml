@@ -1,3 +1,25 @@
 language: java
 jdk:
-    - oraclejdk7
+- oraclejdk7
+deploy:
+- provider: s3
+  access_key_id: AKIAITSW7UVQWHBDITYQ
+  secret_access_key: &1
+    secure: CXVw0ubqJgcSUdeAGCWPALbvydUA1g2WOF3VRyA5ixBsq5ihLyekxLWTODDOdTnGv70SaQmXnxq39HrsxUepFK8vc8avEVUpGbYohE4UnNFOMlZyAR2frGjDJCqHhQcFCw7IvXKc4X61hgcBKRWYG2v15uwoRiQSsE7sPXbpC0RZ2xayVnVVeicn1Qdzempdu6aXJOlErKwH4wm97XSNO9z6+tHlLsIb1iLxWkRS5jAzQLjwoSnVUpCZKe4WIV5NChJzTTx5noyv7iWirlBJSvsl8gJJQZO5AeJNG07hJjkt1UeRTTUVQkFuHde9G7Moq4MhS0EQAMOqkWQ2qlWkDasWWo9/Pv5NB/0eA1gHzVwklfLtvcFInXyQTkFyzllKUeca90RmR1UQcWreJS/1aCiPgzL9RgZvVqtWsFMKpUZfmMntnOmYrng9t20rgREKeEer1bPIWYoIznNJ8iPe+ylRs5YRUMir2vYvXtmPDUq5JmB/0c4DSgZ0P/35B576Mbp19mBwJ1GFhz2PARW/fWfCQ67aS00ohRjSxwMzVCQRJKG/pqE+0gFJUE/etY6PprNARPFbZpLqJMoRJPiNCvLr7b4KLLDt1HsRsMxwtMVOKKS5N7YUItKzOSxYXcZ83WEvY10NM4xfr4+/B2k8rEyBn6vzS1g6FUcWo8YkCY8=
+  local_dir: dpl_cd_upload
+  skip_cleanup: true
+  on: &2
+    repo: g4bryel/csyilab5
+  bucket: lab6-qwicklab
+- provider: codedeploy
+  access_key_id: AKIAITSW7UVQWHBDITYQ
+  secret_access_key: *1
+  bucket: lab6-qwicklab
+  key: lab6
+  bundle_type: ''
+  application: csyilab5
+  deployment_group: ''
+  on: *2
+before_deploy:
+- mkdir -p dpl_cd_upload
+- mv lab6 dpl_cd_upload/lab6

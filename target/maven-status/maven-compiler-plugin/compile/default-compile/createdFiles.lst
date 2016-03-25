@@ -1,0 +1,8 @@
+amazon/cloudshape/rest/Application.class
+amazon/cloudshape/core/Blob.class
+amazon/cloudshape/core/BucketNotFoundException.class
+amazon/cloudshape/core/DataStore.class
+amazon/cloudshape/rest/ServiceController.class
+amazon/cloudshape/core/Bucket.class
+amazon/cloudshape/core/MemoryStore.class
+amazon/cloudshape/core/BlobNotFoundException.class

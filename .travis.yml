@@ -3,7 +3,7 @@ jdk:
 - oraclejdk7
 deploy:
 - provider: s3
-<<<<<<< .travis.yml
+
   access_key_id: AKIAIPUMCJKZXLFPPU5Q
   secret_access_key: &1
     secure: rSILhGOID4yi84IwzMTKbVS1Dc6tRYYmzrTyifx40akOvvh+juGQ3shyu94botAoR1jx5YroQm2Fsmf5pDO3ZRkJEuDNcOH8H7ohuwEAuOFJ67tIibqpN4A0RFOMv/VytkcZ2QGXORU3MFppbd7hKLfjcYtOH+sHfQLg1KHS85cSQAAUNe01ica5W7asR31KGZcWvY4+Z9iW2LYEXYRUXMn1Opf1imS8TQnrS67OOKpXBIuNI2k7lqDaEyNSWII8Fvn+kEm8ANniXO0QTiAD8WhaKHGz7s6pvesQeOh73PnMTjAaS+hFLfTDTWc/Pa1JcL93DBiGk//wNbjL26EZwJIh2JT6oS2fN9IcKbz2HozAmABDfVc3Kf5aFybMWJy8pMdZpMPBJr2M1kFlmmMuQqtEQPI+Zx10Hyg49eC76y5fr0LfR4h2Jfpbpg9OnW6I+oW3h0v4k6KZK+MTH5qCcNZN2tg5HFB9AtdqESv9U4yJEwAPqF/SrGlC+R96WGvMkCNIHxCatBMu6wIllTCccZRUIDWw+Edy1WCv5+QEp678VmiDZYQO+hF8CFN0fevo5FC2EByPJ6oqWw5dbQ9/Oix15hwY3vZkd53tWPffe+oaKYpBKs/TOxcQL5QHSy0oY/l18xlzMIIEmSEYUYSMDca9U33e5vCMi/zwfr54atw=
@@ -16,31 +16,11 @@ deploy:
   access_key_id: AKIAIPUMCJKZXLFPPU5Q
   secret_access_key: *1
   bucket: bucket-deploy-aws5
-=======
-  access_key_id: <REPLACE>AKIAJEKQIFMT56GAWG4Q
-  secret_access_key: &1
-    secure: <REPLACE>DMYiNTlfvmDU6X51AEcNLUvokXaHIIRfKZOxsHouoUUuZ7WlPF5ks7AFWiPp5Gh+aX/dLhBXnavPTnoDHqFGwWidpsekIv5fdlP3XegOoUZnESlg6iV4m9ZUvIEVcFYcaaZKi+DtewaDhOR6jqPvV5TJT0imTbcmIBifLYuJ/SdIXxcgg8K/XJ1PENFsKdx1JR/TK2aBb5JBOe5MSxGyIEdjqM90MEYZgCke8Nhv6mWoubbPA8f7Az28GycqxGqAKOM3pShfsX/tdhEZugsCjDGXRqeKorg8HF3lmqr1PdW6sxuBzlwPH12NSJURgvGRhPuCGJzhPQS6seet/XCm0vMYDXHPZ8dnW+EBi0mmVYoZf0enL2/XDhF82tYcgqkM96+yevnXX+PpY7dyI5yNe4SUkBHuG4L9npyYHgWjL9dK/kiqF/3yEAAzPE7baInEkJ+aZfTMgfEz8rImFK0SL9lapf9FKfgeU/aNBxXJgx/hDfefBoWufCjDVp4sJBDGYb86VNNc90FLOkdTA1rIOrwELcDKaiXq1/mJppo4oyr2TWjT+imBgh5DBsOjCSTTgDQvz6Ys0/92FM333eKgROHw4fa0TyqsnS08FL+NuFiW/F+GB6yv8RvoYylyLtGdq/5Vem7p3kx6lPlEJaFiRqrFZ+LlVEFzPCp+Wf1bfNM=
-  local_dir: dpl_cd_upload
-  skip_cleanup: true
-  on: &2
-    repo: <REPLACE>balcanu/csyilab5
-  bucket: <REPLACE>balcanu-csyilab5-code-deploy
-  region: eu-west-1
-- provider: codedeploy
-  bucket: <REPLACE>balcanu-csyilab5-code-deploy
-  access_key_id: <REPLACE>AKIAJEKQIFMT56GAWG4Q
-  secret_access_key: *1
->>>>>>> samples/sample_travis.yml
   key: csyi-lab-5.tgz
   bundle_type: tgz
   application: csyilab5
   deployment_group: DemoFleet
   on: *2
-<<<<<<< .travis.yml
-before_deploy:
-- mkdir -p dpl_cd_upload
-- mv csyi-lab-5.tgz dpl_cd_upload/csyi-lab-5.tgz
-=======
   region: eu-west-1
 before_deploy:
 - mkdir -p dpl_cd_upload
@@ -48,5 +28,3 @@ before_deploy:
 - cp target/cloudshape-1.0.0.jar target/codedeploy
 - tar -czvf dpl_cd_upload/csyi-lab-5.tgz -C target/codedeploy .
 
-
->>>>>>> samples/sample_travis.yml
